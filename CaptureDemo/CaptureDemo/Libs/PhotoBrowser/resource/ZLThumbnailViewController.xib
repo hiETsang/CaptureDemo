@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZLThumbnailViewController">
+            <connections>
+                <outlet property="btnDone" destination="U0F-PF-fjF" id="Pa6-tF-aId"/>
+                <outlet property="btnOriginalPhoto" destination="xCB-bb-9Iz" id="tK3-wv-h8e"/>
+                <outlet property="btnPreView" destination="k6v-hM-Uel" id="B9M-pH-9yU"/>
+                <outlet property="collectionView" destination="unl-ia-NrZ" id="5MT-M4-Hpr"/>
+                <outlet property="editBtn" destination="mNM-Hm-Ycg" id="ysF-yz-yNc"/>
+                <outlet property="labPhotosBytes" destination="EYy-Pw-rys" id="sj9-QK-nzF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="unl-ia-NrZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OVl-8n-rPd">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="L1o-Yp-Em1"/>
+                        <outlet property="delegate" destination="-1" id="zTC-Mn-UaW"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEG-aC-cFL">
+                    <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0F-PF-fjF">
+                            <rect key="frame" x="276" y="13" width="82" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="NU9-FQ-8OA"/>
+                                <constraint firstAttribute="width" constant="82" id="uMI-ne-e5y"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" red="0.73993879559999998" green="0.76572221519999994" blue="0.82118219140000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.40480396149999998" green="0.4478492141" blue="0.95739918950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnDone_Click:" destination="-1" eventType="touchUpInside" id="a90-8h-QP9"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6v-hM-Uel">
+                            <rect key="frame" x="93" y="12" width="45" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="预览">
+                                <color key="titleColor" red="0.31372549019607843" green="0.70588235294117641" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPreview_Click:" destination="-1" eventType="touchUpInside" id="eTW-yT-S2v"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-bb-9Iz">
+                            <rect key="frame" x="146" y="12" width="55" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="原图" image="btn_original_circle.png">
+                                <color key="titleColor" red="0.31372549020000001" green="0.70588235290000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnOriginalPhoto_Click:" destination="-1" eventType="touchUpInside" id="8ty-tR-CLq"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYy-Pw-rys">
+                            <rect key="frame" x="209" y="12" width="60" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.31372549020000001" green="0.70588235290000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNM-Hm-Ycg">
+                            <rect key="frame" x="0.0" y="0.0" width="53" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="53" id="4Vo-5k-dps"/>
+                            </constraints>
+                            <state key="normal" image="camera_pen_clarity"/>
+                            <state key="selected" image="camera_pen"/>
+                            <connections>
+                                <action selector="editBtn_click:" destination="-1" eventType="touchUpInside" id="vnE-0U-42T"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.40480396149999998" green="0.4478492141" blue="0.95739918950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="mNM-Hm-Ycg" firstAttribute="leading" secondItem="UEG-aC-cFL" secondAttribute="leading" id="Euo-5d-hgB"/>
+                        <constraint firstAttribute="trailing" secondItem="U0F-PF-fjF" secondAttribute="trailing" constant="17" id="ZYc-Ij-pCa"/>
+                        <constraint firstItem="mNM-Hm-Ycg" firstAttribute="top" secondItem="UEG-aC-cFL" secondAttribute="top" id="dos-ol-r9L"/>
+                        <constraint firstItem="U0F-PF-fjF" firstAttribute="centerY" secondItem="UEG-aC-cFL" secondAttribute="centerY" id="gNk-Z3-8OT"/>
+                        <constraint firstAttribute="bottom" secondItem="mNM-Hm-Ycg" secondAttribute="bottom" id="miy-xh-7OK"/>
+                        <constraint firstAttribute="height" constant="55" id="mqK-fo-Q5K"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UEG-aC-cFL" firstAttribute="top" secondItem="unl-ia-NrZ" secondAttribute="bottom" id="7rL-X0-PeQ"/>
+                <constraint firstAttribute="bottom" secondItem="UEG-aC-cFL" secondAttribute="bottom" id="8jv-SB-YDn"/>
+                <constraint firstItem="unl-ia-NrZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HYF-eG-ZxT"/>
+                <constraint firstAttribute="trailing" secondItem="UEG-aC-cFL" secondAttribute="trailing" id="dIk-uh-Ett"/>
+                <constraint firstAttribute="trailing" secondItem="unl-ia-NrZ" secondAttribute="trailing" id="gvA-P9-WVB"/>
+                <constraint firstItem="unl-ia-NrZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gxf-Sq-ypK"/>
+                <constraint firstItem="UEG-aC-cFL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kcI-nS-E6b"/>
+            </constraints>
+            <point key="canvasLocation" x="32.5" y="105.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_original_circle.png" width="16" height="16"/>
+        <image name="camera_pen" width="32" height="32"/>
+        <image name="camera_pen_clarity" width="16" height="16"/>
+    </resources>
+</document>

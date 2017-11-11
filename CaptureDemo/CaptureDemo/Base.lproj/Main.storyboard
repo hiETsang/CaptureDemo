@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-Jm-iTU">
+                                <rect key="frame" x="171.5" y="465" width="31" height="30"/>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bbk-zr-wv0"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VtM-Xd-Y1X">
+                                <rect key="frame" x="0.0" y="40" width="375" height="375"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="NNu-nM-uVe"/>
+                                    <constraint firstAttribute="width" constant="375" id="NUA-TQ-yC9"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neK-2g-nSZ">
+                                <rect key="frame" x="156" y="535" width="62" height="30"/>
+                                <state key="normal" title="相册选取"/>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbS-JL-uUJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VtM-Xd-Y1X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="1Q8-zf-bXG"/>
+                            <constraint firstAttribute="trailing" secondItem="VtM-Xd-Y1X" secondAttribute="trailing" id="6UA-HO-n6J"/>
+                            <constraint firstItem="neK-2g-nSZ" firstAttribute="centerX" secondItem="1CA-Jm-iTU" secondAttribute="centerX" id="BQE-nB-uLj"/>
+                            <constraint firstItem="1CA-Jm-iTU" firstAttribute="top" secondItem="VtM-Xd-Y1X" secondAttribute="bottom" constant="50" id="Yq4-x8-uJL"/>
+                            <constraint firstItem="neK-2g-nSZ" firstAttribute="top" secondItem="1CA-Jm-iTU" secondAttribute="bottom" constant="40" id="ngd-eb-Frt"/>
+                            <constraint firstItem="1CA-Jm-iTU" firstAttribute="centerX" secondItem="VtM-Xd-Y1X" secondAttribute="centerX" id="qTp-Eu-aS8"/>
+                            <constraint firstItem="VtM-Xd-Y1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qch-qo-GpP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="preViewImageView" destination="VtM-Xd-Y1X" id="YwG-KR-vdv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
