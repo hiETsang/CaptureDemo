@@ -27,6 +27,12 @@ double const CScalePhotoWidth = 1000;
 
 @implementation LVSelectPhotoView
 
+-(void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    self.collectionView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -178,6 +184,20 @@ double const CScalePhotoWidth = 1000;
     selectModel.highlight = YES;
     [collectionView reloadItemsAtIndexPaths:@[self.selectIndexPath,indexPath]];
     self.selectIndexPath = indexPath;
+}
+
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (self.collectionViewWillEndDragging) {
+        self.collectionViewWillEndDragging(velocity.y);
+    }
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if (self.collectionViewWillBeginDragging) {
+        self.collectionViewWillBeginDragging(scrollView.contentOffset.y);
+    }
 }
 
 - (void)dealloc

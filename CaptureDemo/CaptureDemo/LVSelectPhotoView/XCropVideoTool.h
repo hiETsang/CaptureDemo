@@ -35,4 +35,12 @@
  */
 - (void)exportFileName:(NSString *)fileName completionBlock:(void (^)(AVAssetExportSession *session))completionBlock;
 
+/**
+ 视频方向
+ 
+ @param url 视频文件URL
+ @return 上  90  下  270  右 0 左 180
+ */
++ (NSUInteger)degressFromVideoFileWithURL:(NSURL *)url;
+
 @end

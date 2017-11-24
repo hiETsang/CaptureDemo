@@ -35,4 +35,12 @@
 //开始初始化数据
 - (void)starInitData;
 
+
+
+/** collectionView滑动将要停止 */
+@property (nonatomic,copy) void (^collectionViewWillEndDragging)(CGFloat velocityY);
+
+/** collectionView将要开始滑动 */
+@property (nonatomic,copy) void (^collectionViewWillBeginDragging)(CGFloat contentOffsetY);
+
 @end

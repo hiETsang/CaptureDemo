@@ -11,6 +11,7 @@
 #import "PHAsset+ChangeForUrl.h"
 #import "LLVideoEditor.h"
 #import "UIImage+ZL.h"
+#import "XCropVideoTool.h"
 
 /***  当前屏幕宽度 */
 #define kScreenWidth  [[UIScreen mainScreen] bounds].size.width
@@ -303,16 +304,12 @@
                     if (self.asset.duration > 60) {
                         [videoEditor trimStartTime:0 duration:60];
                     }
-                    
-                    if (weakSelf.isSquareRatio && !weakSelf.isSquare)
-                    {
-                        //旋转
-                        if (weakSelf.asset.pixelHeight > weakSelf.asset.pixelWidth) {
-                            [videoEditor rotate:LLRotateDegree90];
-                        }
-                        //裁切
-                        [videoEditor crop:[weakSelf getCurrentShowVideoRectOffset]];
+                    //旋转
+                    if ([XCropVideoTool degressFromVideoFileWithURL:responseURL] == 90) {
+                        [videoEditor rotate:LLRotateDegree90];
                     }
+                    //裁切
+                    [videoEditor crop:[weakSelf getCurrentShowVideoRectOffset]];
                     //导出
                     [videoEditor exportToUrl:exportUrl completionBlock:^(AVAssetExportSession *session) {
                         switch (session.status) {
