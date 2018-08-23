@@ -417,7 +417,7 @@
 				TargetAttributes = {
 					71C037F41FAB40FD0066B1E2 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = W2JSHH2VCW;
+						DevelopmentTeam = 5BYP9G3J9X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -675,11 +675,11 @@
 			baseConfigurationReference = 96F8E8B21F49EE455ADD2BED /* Pods-CaptureDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = W2JSHH2VCW;
+				DEVELOPMENT_TEAM = 5BYP9G3J9X;
 				INFOPLIST_FILE = CaptureDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = canoe.CaptureDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = canoe.CaptureDemo.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -689,11 +689,11 @@
 			baseConfigurationReference = 63BD32F24228F249A751A3AB /* Pods-CaptureDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = W2JSHH2VCW;
+				DEVELOPMENT_TEAM = 5BYP9G3J9X;
 				INFOPLIST_FILE = CaptureDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = canoe.CaptureDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = canoe.CaptureDemo.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
